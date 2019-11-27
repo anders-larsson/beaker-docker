@@ -484,7 +484,7 @@ module Beaker
                      '/etc/ssh/sshd_config'])
 
       if host
-        if host['platform'] =~ /alpine/
+        if host['platform'] =~ /alpine|el-8/
           container.exec(%w(/usr/sbin/sshd))
         else
           container.exec(%w(service ssh restart))
